@@ -1,8 +1,27 @@
-# This is the default target, which will be built when 
-# you invoke make
-.PHONY: all
-all: hello
+# Makefile
 
-# This rule tells make how to build hello from hello.cpp
-hello: hello.cpp
-    g++ -o hello hello.cpp
+# Compiler
+CXX = g++
+
+# Source file directory
+SRC_DIR = src
+
+# Build directory
+BUILD_DIR = build
+
+# Source file
+SRC = $(SRC_DIR)/hello.cpp
+
+# Executable name
+TARGET = $(BUILD_DIR)/hello
+
+# Compiler flags
+CXXFLAGS = -Wall -g
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $@ $<
+
+clean:
+	rm -f $(TARGET)
