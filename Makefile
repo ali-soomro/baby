@@ -13,7 +13,7 @@ BUILD_DIR = build
 SRC = $(SRC_DIR)/hello.cpp
 
 # Executable name
-TARGET = $(BUILD_DIR)/hello
+TARGET = $(BUILD_DIR)/fuzz_target
 
 # Compiler flags
 CXXFLAGS = -Wall -g
